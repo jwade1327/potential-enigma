@@ -1,1 +1,1 @@
-# potential-enigma
+# readme-generator
