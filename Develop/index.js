@@ -54,17 +54,10 @@ const questions = () => {
             }
         },
         {
-            type: 'input',
+            type: 'checkbox',
             name: 'license',
-            message: 'Provide license information for your project. (Required)',
-            validate: licenseInput => {
-                if (licenseInput) {
-                    return true;
-                } else {
-                    console.log('Please provide license information for your project.')
-                    return false;
-                }
-            }
+            message: 'Which license(s) do you want to include with your project?',
+            choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense', 'NONE']
         },
         {
             type: 'input',
@@ -109,12 +102,39 @@ const questions = () => {
 };
 
 // function to write README file
-function writeToFile(fileName, data) {}
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeToFile('./utils/index.html', fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok: true,
+                message: 'README created!'
+            });
+        });
+    });
+};
 
 // function to initialize program
-function init() {
+//function init() {
 
-}
+//}
+promptUser()
+    .then(questions)
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+
 
 // function call to initialize program
-init();
+//init();
+
+module.exports = { writeFile };
