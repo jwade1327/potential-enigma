@@ -1,4 +1,6 @@
-# fjieowa;
+// function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.title}
     
   ## Table of Contents
       * [Description](#description)
@@ -10,23 +12,27 @@
       * [Questions](#questions)
     
   ## Description
-    fejwioa;
+    ${data.description}
 
   ## Installation
-    fjeiwoa
+    ${data.installation}
 
   ## Usage
-    fejioaw
+    ${data.usage}
 
   ## License
-    GNU AGPLv3
+    ${data.license}
 
   ## Contributing
-    fjewioa
+    ${data.contributing}
 
   ## Tests
-    fjewiao;
+    ${data.tests}
 
   ## Questions
-    http://www.github.com/jwade1327
+    ${data.link}
     
+`;
+}
+
+module.exports = generateMarkdown;
