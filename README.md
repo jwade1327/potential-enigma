@@ -1,4 +1,4 @@
-# fjewio
+# robot-gladiators
     
   ## Table of Contents
   [Description](#description)
@@ -16,23 +16,23 @@
   [Questions](#questions)
     
   ## Description
-    fwejio
+    using JavaScript to create a simulatated fight against random computer robots
 
   ## Installation
-    fwejio
+    n/a
 
   ## Usage
-    fwejio
+    n/a
 
   ## License
-    GNU AGPLv3
+    
 
   ## Contributing
-    fjewio
+    myself
 
   ## Tests
-    fewjio
+    n/a 
 
   ## Questions
-    http://www.github.com/jwade1327
+    http://github.com/jwade1327
     
