@@ -3,7 +3,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
     
   ## Table of Contents
-      * [Description] (#description)
+      * [Description](#description)
       * [Installationg](#installation)
       * [Usage](#usage)
       * [License](#license)
@@ -30,7 +30,7 @@ function generateMarkdown(data) {
     ${data.tests}
 
   ## Questions
-    ${data.questions}
+    ${data.link}
     
 `;
 }

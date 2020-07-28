@@ -12,17 +12,17 @@ const questions = [
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description of the project. (Required)',
+            message: 'Provide a description of the project. (Required)'
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'Provide the steps required to install your project. (Required)',
+            message: 'Provide the steps required to install your project. (Required)'
         },
         {
             type: 'input',
             name: 'usage',
-            message: "Provide instructions and examples of your project's usage. (Required)",
+            message: "Provide instructions and examples of your project's usage. (Required)"
         },
         {
             type: 'checkbox',
@@ -33,43 +33,28 @@ const questions = [
         {
             type: 'input',
             name: 'contributing',
-            message: 'Provide contributing information for your project. (Required)',
+            message: 'Provide contributing information for your project. (Required)'
         },
         {
             type: 'input',
             name: 'tests',
-            message: 'Provide testing information for your project. (Required)',
+            message: 'Provide testing information for your project. (Required)'
         },
         {
             type: 'input',
             name: 'link',
-            message: 'Please enter your GitHub username. (Required)',
+            message: 'Please enter your GitHub link. (ex:http://www.github.com/USERNAME)'
         }
 ];
 
 // function to write README file
-const writeFile = fileContent => {
-    return new Promise((resolve, reject) => {
-        fs.writeFile('./utils/index.js', fileContent, err => {
-            if (err) {
-                reject(err);
-                return;
-            }
-            resolve({
-                ok: true,
-                message: 'README created!'
-            });
-        });
-    });
-};
 
-// function to initialize program
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 
-
+// function to initialize program
 
 function init() {
     inquirer.prompt(questions)
